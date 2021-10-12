@@ -16,7 +16,10 @@ class FileStorage
         $pathFile = $this->param['path'].$time.'_'.$rand.'_'.$data['file']['name'];
 
         copy($data['file']['tmp_name'], $pathFile);
-        return $pathFile;
+
+        $addr = 'http://'.$_SERVER['SERVER_NAME'].'/UserFiles/'.$time.'_'.$rand.'_'.$data['file']['name'];
+
+        return $addr;
     }
 
     /**
